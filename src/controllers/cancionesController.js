@@ -7,7 +7,10 @@ const cancionesController = {
             .findAll()
             .then(canciones => {
                 return res.json({
-                    total: canciones.length,
+                    meta:{
+                        status: 200,
+                        total: canciones.length
+                },
                     data: canciones
                 })
             })
@@ -19,6 +22,9 @@ const cancionesController = {
             .findByPk(req.params.id)
             .then(cancion => {
                 return res.json({
+                    meta:{
+                        status: 200,
+                    },
                     data: cancion
                 })
             })
@@ -37,8 +43,12 @@ const cancionesController = {
             })
             .then(cancion => {
                 return res.json({
+                    meta:{
+                        status: 200,
+                        created: 'ok'
+                    },
                     data: cancion,
-                    created: 'ok'
+                    
                 })
             })
     },
@@ -73,8 +83,12 @@ const cancionesController = {
         )
         .then(cancion => {
             return res.json({
+                meta:{
+                    status: 200,
+                    updated: 'ok'
+                },
                 data: cancion,
-                updated: 'ok'
+                
             })
         })
     }

@@ -5,7 +5,10 @@ const generosController = {
             .findAll()
             .then(generos => {
                 return res.json({
-                    total: generos.length,
+                    meta:{
+                        total: generos.length,
+                        status: 200
+                    },
                     data: generos
                 })
             })
