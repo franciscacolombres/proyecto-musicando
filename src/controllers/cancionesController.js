@@ -61,7 +61,11 @@ const cancionesController = {
                 }
             })
         .then(response => {
-            return res.json("se ha borrado la cancion")
+            return res.json({
+                status:200,
+                deleted:'ok'
+            }
+        )
         })
     },
 
