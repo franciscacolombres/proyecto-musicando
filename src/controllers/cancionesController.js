@@ -35,8 +35,8 @@ const cancionesController = {
             .create({
                 titulo:req.body.titulo,
                 duracion:req.body.duracion,
-                created_at:req.body.created_at,
-                updated_at:req.body.updated_at, 
+                created_at:new Date(),
+                updated_at:new Date(), 
                 genero_id:req.body.genero_id,
                 album_id:req.body.album_id,
                 artista_id:req.body.artista_id
